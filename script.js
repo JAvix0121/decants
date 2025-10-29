@@ -314,6 +314,8 @@ let currentFilters = {
     tipo: '',
     tamaño: ''
 };
+let favorites = JSON.parse(localStorage.getItem('favoritePerfumes') || '[]');
+let comparisonList = JSON.parse(localStorage.getItem('comparisonList') || '[]');
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', function() {
@@ -326,6 +328,7 @@ function initializeApp() {
     renderPerfumes();
     renderBestSellers();
     setupModal();
+    initializeCounters();
 }
 
 // Navegación móvil
@@ -422,7 +425,10 @@ function renderPerfumes() {
         return;
     }
 
-    grid.innerHTML = filteredPerfumes.map(perfume => `
+    grid.innerHTML = filteredPerfumes.map(perfume => {
+        const isFavorited = favorites.includes(perfume.id);
+        const isInComparison = comparisonList.includes(perfume.id);
+        return `
         <div class="perfume-card">
             <div class="perfume-image" data-perfume-id="${perfume.id}" onclick="openPerfumeModal(${perfume.id})">
                 <img class="perfume-image-main" src="${perfume.image}" alt="${perfume.name}" onerror="handleImageError(this, '${perfume.name}')">
@@ -439,11 +445,19 @@ function renderPerfumes() {
                 <div class="card-actions">
                     <button class="btn btn-primary" onclick="openPerfumeModal(${perfume.id})"><i class="fas fa-eye"></i> Ver</button>
                     <button class="btn btn-secondary" onclick="contactWhatsApp('${perfume.name} - Consulta', ${perfume.price5ml})"><i class="fab fa-whatsapp"></i> Consultar</button>
+                    <button class="icon-btn favorite-btn ${isFavorited ? 'favorited' : ''}" title="${isFavorited ? 'Quitar de favoritos' : 'Agregar a favoritos'}" onclick="toggleFavorite(${perfume.id}); event.stopPropagation();">
+                        <i class="${isFavorited ? 'fas' : 'far'} fa-heart"></i>
+                    </button>
+                    <button class="icon-btn compare-btn ${isInComparison ? 'in-comparison' : ''}" title="${isInComparison ? 'Quitar de comparación' : 'Comparar perfume'}" onclick="toggleComparison(${perfume.id}); event.stopPropagation();">
+                        <i class="fas fa-balance-scale"></i>
+                        ${isInComparison ? '<span class="compare-count">✓</span>' : ''}
+                    </button>
                     <button class="icon-btn" title="Compartir" onclick="sharePerfume(${perfume.id}); event.stopPropagation();"><i class="fas fa-share-alt"></i></button>
                 </div>
             </div>
         </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 // Renderizado de más vendidos
@@ -451,7 +465,10 @@ function renderBestSellers() {
     const bestSellers = perfumes.filter(perfume => perfume.bestSeller);
     const grid = document.getElementById('best-sellers-grid');
 
-    grid.innerHTML = bestSellers.map(perfume => `
+    grid.innerHTML = bestSellers.map(perfume => {
+        const isFavorited = favorites.includes(perfume.id);
+        const isInComparison = comparisonList.includes(perfume.id);
+        return `
         <div class="best-seller-card">
             <div class="perfume-image" data-perfume-id="${perfume.id}" onclick="openPerfumeModal(${perfume.id})">
                 <img class="perfume-image-main" src="${perfume.image}" alt="${perfume.name}" onerror="handleImageError(this, '${perfume.name}')">
@@ -468,11 +485,19 @@ function renderBestSellers() {
                 <div class="card-actions">
                     <button class="btn btn-primary" onclick="openPerfumeModal(${perfume.id})"><i class="fas fa-eye"></i> Ver</button>
                     <button class="btn btn-secondary" onclick="contactWhatsApp('${perfume.name} - Consulta', ${perfume.price5ml})"><i class="fab fa-whatsapp"></i> Consultar</button>
+                    <button class="icon-btn favorite-btn ${isFavorited ? 'favorited' : ''}" title="${isFavorited ? 'Quitar de favoritos' : 'Agregar a favoritos'}" onclick="toggleFavorite(${perfume.id}); event.stopPropagation();">
+                        <i class="${isFavorited ? 'fas' : 'far'} fa-heart"></i>
+                    </button>
+                    <button class="icon-btn compare-btn ${isInComparison ? 'in-comparison' : ''}" title="${isInComparison ? 'Quitar de comparación' : 'Comparar perfume'}" onclick="toggleComparison(${perfume.id}); event.stopPropagation();">
+                        <i class="fas fa-balance-scale"></i>
+                        ${isInComparison ? '<span class="compare-count">✓</span>' : ''}
+                    </button>
                     <button class="icon-btn" title="Compartir" onclick="sharePerfume(${perfume.id}); event.stopPropagation();"><i class="fas fa-share-alt"></i></button>
                 </div>
             </div>
         </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 // Modal de perfume
@@ -1235,4 +1260,226 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     };
 });
+
+// ========== FUNCIONES PRÁCTICAS ADICIONALES ==========
+
+// Sistema de Favoritos Mejorado
+function toggleFavorite(perfumeId) {
+    const index = favorites.indexOf(perfumeId);
+    
+    if (index > -1) {
+        favorites.splice(index, 1);
+        showNotification('❌ Removido de favoritos', 'info');
+    } else {
+        favorites.push(perfumeId);
+        showNotification('❤️ Agregado a favoritos', 'success');
+    }
+    
+    localStorage.setItem('favoritePerfumes', JSON.stringify(favorites));
+    updateFavoriteButtons();
+    updateFavoritesCounter();
+}
+
+function updateFavoriteButtons() {
+    document.querySelectorAll('.favorite-btn').forEach(btn => {
+        const perfumeId = parseInt(btn.closest('.perfume-card, .best-seller-card')
+            ?.querySelector('.perfume-image')?.dataset.perfumeId);
+        if (!perfumeId) return;
+        
+        const isFavorited = favorites.includes(perfumeId);
+        btn.classList.toggle('favorited', isFavorited);
+        const icon = btn.querySelector('i');
+        if (icon) {
+            icon.className = isFavorited ? 'fas fa-heart' : 'far fa-heart';
+        }
+        btn.title = isFavorited ? 'Quitar de favoritos' : 'Agregar a favoritos';
+    });
+}
+
+function updateFavoritesCounter() {
+    const counter = document.getElementById('favorites-counter');
+    if (counter) {
+        counter.textContent = favorites.length;
+        counter.style.display = favorites.length > 0 ? 'flex' : 'none';
+    }
+}
+
+// Sistema de Comparación
+function toggleComparison(perfumeId) {
+    const index = comparisonList.indexOf(perfumeId);
+    
+    if (index > -1) {
+        comparisonList.splice(index, 1);
+        showNotification('Comparación removida', 'info');
+    } else {
+        if (comparisonList.length >= 3) {
+            showNotification('Máximo 3 perfumes para comparar', 'warning');
+            return;
+        }
+        comparisonList.push(perfumeId);
+        showNotification('Agregado a comparación', 'success');
+    }
+    
+    localStorage.setItem('comparisonList', JSON.stringify(comparisonList));
+    updateComparisonButtons();
+    updateComparisonBadge();
+    
+    if (comparisonList.length >= 2) {
+        showComparisonButton();
+    }
+}
+
+function updateComparisonButtons() {
+    document.querySelectorAll('.compare-btn').forEach(btn => {
+        const perfumeId = parseInt(btn.closest('.perfume-card, .best-seller-card')
+            ?.querySelector('.perfume-image')?.dataset.perfumeId);
+        if (!perfumeId) return;
+        
+        const isInComparison = comparisonList.includes(perfumeId);
+        btn.classList.toggle('in-comparison', isInComparison);
+        
+        if (!btn.querySelector('.compare-count') && isInComparison) {
+            const span = document.createElement('span');
+            span.className = 'compare-count';
+            span.textContent = '✓';
+            btn.appendChild(span);
+        } else if (btn.querySelector('.compare-count') && !isInComparison) {
+            btn.querySelector('.compare-count')?.remove();
+        }
+        
+        btn.title = isInComparison ? 'Quitar de comparación' : 'Comparar perfume';
+    });
+}
+
+function updateComparisonBadge() {
+    const badge = document.getElementById('comparison-badge');
+    if (badge) {
+        badge.textContent = comparisonList.length;
+        badge.style.display = comparisonList.length > 0 ? 'flex' : 'none';
+    }
+}
+
+function showComparisonButton() {
+    let btn = document.getElementById('show-comparison-btn');
+    if (!btn) {
+        btn = document.createElement('button');
+        btn.id = 'show-comparison-btn';
+        btn.className = 'comparison-fab';
+        btn.innerHTML = '<i class="fas fa-balance-scale"></i><span>Comparar (${comparisonList.length})</span>';
+        btn.onclick = openComparisonModal;
+        document.body.appendChild(btn);
+    }
+    btn.innerHTML = `<i class="fas fa-balance-scale"></i><span>Comparar (${comparisonList.length})</span>`;
+}
+
+// Modal de Comparación
+function openComparisonModal() {
+    if (comparisonList.length < 2) {
+        showNotification('Selecciona al menos 2 perfumes para comparar', 'warning');
+        return;
+    }
+    
+    const comparedPerfumes = perfumes.filter(p => comparisonList.includes(p.id));
+    
+    const modal = document.createElement('div');
+    modal.className = 'comparison-modal';
+    modal.innerHTML = `
+        <div class="comparison-content">
+            <div class="comparison-header">
+                <h2><i class="fas fa-balance-scale"></i> Comparar Perfumes</h2>
+                <button class="close-comparison" onclick="this.closest('.comparison-modal').remove()">&times;</button>
+            </div>
+            <div class="comparison-grid">
+                ${comparedPerfumes.map(perfume => `
+                    <div class="comparison-card">
+                        <div class="comparison-image">
+                            <img src="${perfume.image}" alt="${perfume.name}">
+                            <button class="remove-from-comparison" onclick="toggleComparison(${perfume.id}); this.closest('.comparison-modal').remove(); setTimeout(openComparisonModal, 100);">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <h3>${perfume.name}</h3>
+                        <p class="comparison-brand">${perfume.brandName}</p>
+                        <div class="comparison-details">
+                            <div class="detail-item">
+                                <strong>Tipo:</strong> ${perfume.typeName}
+                            </div>
+                            <div class="detail-item">
+                                <strong>Precio 5ml:</strong> $${perfume.price5ml}
+                            </div>
+                            <div class="detail-item">
+                                <strong>Precio 10ml:</strong> $${perfume.price10ml}
+                            </div>
+                            <div class="detail-item notes">
+                                <strong>Notas:</strong>
+                                <ul>
+                                    <li><strong>Salida:</strong> ${perfume.notes.salida}</li>
+                                    <li><strong>Corazón:</strong> ${perfume.notes.corazon}</li>
+                                    <li><strong>Fondo:</strong> ${perfume.notes.fondo}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="openPerfumeModal(${perfume.id}); this.closest('.comparison-modal').remove();">
+                            Ver Detalles
+                        </button>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="comparison-footer">
+                <button class="btn btn-secondary" onclick="clearComparison(); this.closest('.comparison-modal').remove();">
+                    Limpiar Comparación
+                </button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Cerrar al hacer clic fuera
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+}
+
+function clearComparison() {
+    comparisonList = [];
+    localStorage.setItem('comparisonList', JSON.stringify(comparisonList));
+    updateComparisonButtons();
+    updateComparisonBadge();
+    const btn = document.getElementById('show-comparison-btn');
+    if (btn) btn.remove();
+    showNotification('Comparación limpiada', 'info');
+}
+
+// Sistema de Notificaciones Mejorado
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'warning' ? 'fa-exclamation-triangle' : 'fa-info-circle'}"></i>
+        <span>${message}</span>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
+// Actualizar contadores al inicializar
+function initializeCounters() {
+    updateFavoritesCounter();
+    updateComparisonBadge();
+    if (comparisonList.length >= 2) {
+        showComparisonButton();
+    }
+}
 
