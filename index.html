@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Scents - Fragancias del Universo en Decants</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='galaxyGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2300D4AA;stop-opacity:1' /%3E%3Cstop offset='50%25' style='stop-color:%2300B894;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23E17055;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cellipse cx='50' cy='70' rx='8' ry='15' fill='url(%23galaxyGradient)' opacity='0.9'/%3E%3Crect x='47' y='40' width='6' height='30' fill='url(%23galaxyGradient)' opacity='0.9'/%3E%3Cellipse cx='50' cy='40' rx='5' ry='8' fill='url(%23galaxyGradient)'/%3E%3Crect x='48' y='30' width='4' height='10' fill='url(%23galaxyGradient)' opacity='0.7'/%3E%3Ccircle cx='50' cy='25' r='2' fill='%23E17055' opacity='0.8'/%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%23E17055' opacity='0.8'/%3E%3Ccircle cx='70' cy='35' r='1' fill='%23D63031' opacity='0.6'/%3E%3Ccircle cx='25' cy='60' r='1.2' fill='%23E17055' opacity='0.7'/%3E%3Ccircle cx='75' cy='65' r='0.9' fill='%23D63031' opacity='0.5'/%3E%3C/svg%3E">
+</head>
+<body>
+
+    <!-- Header y Navegación -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo Centrado -->
+                <div class="nav-logo">
+                    <div class="logo-container">
+                        <div class="galaxy-logo">
+                            <i class="fas fa-star logo-star"></i>
+                            <span class="logo-text">GALAXY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menú de Navegación Centrado -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#catalogo" class="nav-link">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#mas-vendidos" class="nav-link">Más Vendidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link">Contacto</a>
+                    </li>
+                </ul>
+
+                <!-- Botones de Acción -->
+                <div class="nav-actions">
+                    <button class="action-btn login-btn" id="loginBtn">
+                        <i class="fas fa-user"></i>
+                        <span>Iniciar Sesión</span>
+                    </button>
+                    <button class="action-btn cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Carrito</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+
+                <!-- Menú Hamburger -->
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección Home -->
+    <section id="home" class="hero">
+        <!-- Estrellas Animadas del Hero -->
+        <div class="hero-stars">
+            <div class="star star-1"></div>
+            <div class="star star-2"></div>
+            <div class="star star-3"></div>
+            <div class="star star-4"></div>
+            <div class="star star-5"></div>
+            <div class="star star-6"></div>
+            <div class="star star-7"></div>
+            <div class="star star-8"></div>
+            <div class="star star-9"></div>
+            <div class="star star-10"></div>
+            <div class="star star-11"></div>
+            <div class="star star-12"></div>
+            <div class="star star-13"></div>
+            <div class="star star-14"></div>
+            <div class="star star-15"></div>
+            <div class="star star-16"></div>
+            <div class="star star-17"></div>
+            <div class="star star-18"></div>
+            <div class="star star-19"></div>
+            <div class="star star-20"></div>
+            <div class="star star-21"></div>
+            <div class="star star-22"></div>
+            <div class="star star-23"></div>
+            <div class="star star-24"></div>
+            <div class="star star-25"></div>
+            <div class="star star-26"></div>
+            <div class="star star-27"></div>
+            <div class="star star-28"></div>
+            <div class="star star-29"></div>
+            <div class="star star-30"></div>
+            <div class="star star-31"></div>
+            <div class="star star-32"></div>
+            <div class="star star-33"></div>
+            <div class="star star-34"></div>
+            <div class="star star-35"></div>
+            <div class="star star-36"></div>
+            <div class="star star-37"></div>
+            <div class="star star-38"></div>
+            <div class="star star-39"></div>
+            <div class="star star-40"></div>
+        </div>
+        
+        <!-- Constelaciones -->
+        <div class="constellations">
+            <div class="constellation constellation-1">
+                <div class="constellation-line"></div>
+                <div class="constellation-dot"></div>
+                <div class="constellation-dot"></div>
+                <div class="constellation-dot"></div>
+            </div>
+            <div class="constellation constellation-2">
+                <div class="constellation-line"></div>
+                <div class="constellation-dot"></div>
+                <div class="constellation-dot"></div>
+                <div class="constellation-dot"></div>
+            </div>
+            <div class="constellation constellation-3">
+                <div class="constellation-line"></div>
+                <div class="constellation-dot"></div>
+                <div class="constellation-dot"></div>
+                <div class="constellation-dot"></div>
+            </div>
+            <div class="constellation constellation-4">
+                <div class="constellation-line"></div>
+                <div class="constellation-dot"></div>
+                <div class="constellation-dot"></div>
+                <div class="constellation-dot"></div>
+            </div>
+        </div>
+        
+        <!-- Estrellas Fugaces -->
+        <div class="shooting-stars">
+            <div class="shooting-star shooting-star-1"></div>
+            <div class="shooting-star shooting-star-2"></div>
+            <div class="shooting-star shooting-star-3"></div>
+            <div class="shooting-star shooting-star-4"></div>
+            <div class="shooting-star shooting-star-5"></div>
+            <div class="shooting-star shooting-star-6"></div>
+        </div>
+        
+        <!-- Partículas Flotantes -->
+        <div class="floating-particles">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
+            <div class="particle particle-6"></div>
+            <div class="particle particle-7"></div>
+            <div class="particle particle-8"></div>
+            <div class="particle particle-9"></div>
+            <div class="particle particle-10"></div>
+        </div>
+        
+        <!-- Nubes Cósmicas -->
+        <div class="cosmic-clouds">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Fragancias del Universo en Decants</h1>
+            <p class="hero-subtitle">Explora las esencias más celestiales del cosmos en presentaciones de 5ml y 10ml</p>
+            <a href="#catalogo" class="cta-button">Ver Catálogo Completo</a>
+        </div>
+    </section>
+
+    <!-- Sección ¿Qué es un Decant? -->
+    <section class="about-decants">
+        <h2 class="section-title">¿Qué es un Decant Cósmico?</h2>
+            <div class="decant-info">
+                <div class="decant-explanation">
+                    <div class="info-card">
+                        <i class="fas fa-tint"></i>
+                        <h3>¿Qué es?</h3>
+                        <p>Un decant cósmico es una porción de fragancia celestial extraída del frasco original y envasada en un atomizador estelar. Es la forma perfecta de explorar esencias del universo sin invertir en el frasco completo.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Rendimiento</h3>
+                        <p><strong>5ml:</strong> Aproximadamente 80-100 atomizaciones<br>
+                        <strong>10ml:</strong> Aproximadamente 160-200 atomizaciones</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Garantía</h3>
+                        <p>100% originales, extraídos directamente de frascos auténticos. Enviamos en atomizadores de vidrio cósmico con etiquetas estelares personalizadas.</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Sección Catálogo -->
+    <section id="catalogo" class="catalog">
+        <h2 class="section-title">Catálogo de Fragancias Cósmicas</h2>
+            
+            <!-- Filtros -->
+            <div class="filters-container">
+            <div class="filters">
+                    <div class="filter-group search-group">
+                        <label for="search-input">
+                            <i class="fas fa-search"></i>
+                            Buscar:
+                        </label>
+                        <input type="text" id="search-input" placeholder="Nombre, marca o tipo de fragancia..." />
+                    </div>
+                    
+                <div class="filter-group">
+                        <label for="marca-filter">
+                            <i class="fas fa-tag"></i>
+                            Marca:
+                        </label>
+                    <select id="marca-filter">
+                        <option value="">Todas las marcas</option>
+                        <option value="jean-paul-gaultier">Jean Paul Gaultier</option>
+                        <option value="ysl">Yves Saint Laurent</option>
+                        <option value="versace">Versace</option>
+                        <option value="rasasi">Rasasi</option>
+                        <option value="valentino">Valentino</option>
+                        <option value="burberry">Burberry</option>
+                        <option value="azzaro">Azzaro</option>
+                        <option value="paco-rabanne">Paco Rabanne</option>
+                    </select>
+                </div>
+                    
+                <div class="filter-group">
+                        <label for="tipo-filter">
+                            <i class="fas fa-leaf"></i>
+                            Tipo de Fragancia:
+                        </label>
+                    <select id="tipo-filter">
+                        <option value="">Todos los tipos</option>
+                        <option value="amaderado">Amaderado</option>
+                        <option value="atalcado">Atalcado</option>
+                        <option value="marino">Marino</option>
+                        <option value="citrico">Cítrico</option>
+                        <option value="floral">Floral</option>
+                        <option value="oriental">Oriental</option>
+                    </select>
+                </div>
+                    
+                <div class="filter-group">
+                        <label for="tamaño-filter">
+                            <i class="fas fa-flask"></i>
+                            Tamaño:
+                        </label>
+                    <select id="tamaño-filter">
+                        <option value="">Todos los tamaños</option>
+                        <option value="5ml">5ml</option>
+                        <option value="10ml">10ml</option>
+                    </select>
+                </div>
+                </div>
+            </div>
+
+            <!-- Grid de Perfumes -->
+            <div class="perfumes-grid" id="perfumes-grid">
+                <!-- Los perfumes se cargarán dinámicamente -->
+            </div>
+    </section>
+
+    <!-- Sección Más Vendidos -->
+    <section id="mas-vendidos" class="best-sellers">
+        <h2 class="section-title">Fragancias Estelares Más Vendidas</h2>
+        <div class="best-sellers-grid" id="best-sellers-grid">
+            <!-- Se cargarán dinámicamente -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="footer-wrap">
+            <div class="footer-brand">
+                <div class="brand-title">
+                    <i class="fas fa-star brand-icon"></i>
+                    GALAXY
+                </div>
+                <p class="brand-copy">Creamos posibilidades para el olfato conectado al universo.</p>
+                <p class="brand-bold">Sé audaz.</p>
+                <p class="copyright mobile">© 2024 Galaxy Scents. Todos los derechos reservados.</p>
+            </div>
+
+            <div class="footer-columns">
+                <div class="col">
+                    <h4 class="col-title">
+                        <i class="fas fa-compass col-icon"></i>
+                        Explore
+                    </h4>
+                    <ul class="col-list">
+                        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li><a href="#catalogo"><i class="fas fa-cogs"></i> Capabilities</a></li>
+                        <li><a href="#mas-vendidos"><i class="fas fa-briefcase"></i> Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h4 class="col-title">
+                        <i class="fas fa-map-marker-alt col-icon"></i>
+                        Visit
+                    </h4>
+                    <ul class="col-list muted">
+                        <li><i class="fas fa-building"></i> Galaxy Scents, Panamá</li>
+                        <li><i class="fas fa-road"></i> Av. Estelar 34, Piso 1</li>
+                        <li><i class="fas fa-city"></i> Ciudad de Panamá</li>
+                    </ul>
+                    <div class="subgroup">
+                        <h5 class="sub-title">
+                            <i class="fas fa-handshake"></i> New Business
+                        </h5>
+                        <ul class="col-list muted">
+                            <li><a href="mailto:javier.rm0121@gmail.com"><i class="fas fa-envelope"></i> javier.rm0121@gmail.com</a></li>
+                            <li><a href="https://wa.me/50767970489" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> +507 6797-0489</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <h4 class="col-title">
+                        <i class="fas fa-share-alt col-icon"></i>
+                        Follow
+                    </h4>
+                    <ul class="col-list">
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h4 class="col-title">
+                        <i class="fas fa-gavel col-icon"></i>
+                        Legal
+                    </h4>
+                    <ul class="col-list">
+                        <li><a href="#"><i class="fas fa-file-contract"></i> Terms</a></li>
+                        <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col next">
+                    <div class="next-label">
+                        <i class="fas fa-arrow-right next-icon"></i>
+                        Next: <a href="#about">About</a>
+                    </div>
+                    <span class="next-underline" aria-hidden="true"></span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright desktop">&copy; 2024 Galaxy Scents. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para Perfume Individual -->
+    <div id="perfume-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body" id="modal-body">
+                <!-- Contenido del perfume se cargará aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script src="imageManager.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

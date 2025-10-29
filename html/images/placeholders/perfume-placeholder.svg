@@ -1,0 +1,36 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="galaxyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D4AA;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00B894;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E17055;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bottleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="400" height="400" fill="url(#galaxyGradient)"/>
+  
+  <!-- Frasco de perfume -->
+  <ellipse cx="200" cy="280" rx="25" ry="40" fill="url(#bottleGradient)" opacity="0.8"/>
+  <rect x="190" y="200" width="20" height="80" fill="url(#bottleGradient)" opacity="0.8"/>
+  <ellipse cx="200" cy="200" rx="15" ry="25" fill="url(#bottleGradient)"/>
+  <rect x="195" y="150" width="10" height="50" fill="url(#bottleGradient)" opacity="0.7"/>
+  <circle cx="200" cy="140" r="3" fill="#E17055" opacity="0.8"/>
+  
+  <!-- Partículas flotantes -->
+  <circle cx="100" cy="100" r="2" fill="#ffffff" opacity="0.6"/>
+  <circle cx="300" cy="120" r="1.5" fill="#ffffff" opacity="0.5"/>
+  <circle cx="80" cy="200" r="1" fill="#ffffff" opacity="0.4"/>
+  <circle cx="320" cy="180" r="2.5" fill="#ffffff" opacity="0.7"/>
+  <circle cx="120" cy="320" r="1.5" fill="#ffffff" opacity="0.6"/>
+  <circle cx="280" cy="300" r="1" fill="#ffffff" opacity="0.5"/>
+  
+  <!-- Texto -->
+  <text x="200" y="360" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Galaxy Scents</text>
+  <text x="200" y="380" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" opacity="0.8">Fragancia Cósmica</text>
+</svg>
+
