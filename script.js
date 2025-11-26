@@ -14,8 +14,8 @@ const perfumes = [
             fondo: "Vainilla, Sándalo"
         },
         originalPrice: 95,
-        price5ml: 22,
-        price10ml: 40,
+        price5ml: 10,
+        price10ml: 14,
         bestSeller: true,
         available: true
     },
@@ -33,8 +33,8 @@ const perfumes = [
             fondo: "Vainilla, Praliné"
         },
         originalPrice: 110,
-        price5ml: 25,
-        price10ml: 45,
+        price5ml: 10.5,
+        price10ml: 14.5,
         bestSeller: true,
         available: true
     },
@@ -52,8 +52,8 @@ const perfumes = [
             fondo: "Cedro, Ambergris"
         },
         originalPrice: 130,
-        price5ml: 28,
-        price10ml: 50,
+        price5ml: 11,
+        price10ml: 15,
         bestSeller: true,
         available: true
     },
@@ -71,8 +71,8 @@ const perfumes = [
             fondo: "Vainilla, Sándalo"
         },
         originalPrice: 125,
-        price5ml: 27,
-        price10ml: 48,
+        price5ml: 11,
+        price10ml: 15,
         bestSeller: false,
         available: true
     },
@@ -90,8 +90,8 @@ const perfumes = [
             fondo: "Vainilla, Sándalo"
         },
         originalPrice: 90,
-        price5ml: 20,
-        price10ml: 35,
+        price5ml: 10,
+        price10ml: 14,
         bestSeller: true,
         available: true
     },
@@ -109,8 +109,8 @@ const perfumes = [
             fondo: "Incenso, Musk"
         },
         originalPrice: 85,
-        price5ml: 19,
-        price10ml: 33,
+        price5ml: 9.5,
+        price10ml: 13.5,
         bestSeller: false,
         available: true
     },
@@ -128,8 +128,8 @@ const perfumes = [
             fondo: "Musk, Sándalo"
         },
         originalPrice: 65,
-        price5ml: 15,
-        price10ml: 28,
+        price5ml: 8.5,
+        price10ml: 12.5,
         bestSeller: true,
         available: true
     },
@@ -140,53 +140,34 @@ const perfumes = [
         brandName: "Valentino",
         type: "amaderado",
         typeName: "Amaderado",
-        image: "html/images/perfumes/roma.webp",
+        image: "born in roma.webp",
         notes: {
             salida: "Bergamota, Pimienta",
             corazon: "Violeta, Lavanda",
             fondo: "Vetiver, Musk"
         },
         originalPrice: 120,
-        price5ml: 26,
-        price10ml: 47,
+        price5ml: 11,
+        price10ml: 15,
         bestSeller: false,
         available: true
     },
     {
-        id: 9,
-        name: "Uomo",
-        brand: "valentino",
-        brandName: "Valentino",
+        id: 10,
+        name: "Khamra Kawa",
+        brand: "lattafa",
+        brandName: "Lattafa",
         type: "oriental",
         typeName: "Oriental",
-        image: "https://images.unsplash.com/photo-1588405748880-12d1d2a59d75?w=400&h=400&fit=crop",
+        image: "html/images/perfumes/kawa.webp",
         notes: {
-            salida: "Bergamota, Lavanda",
-            corazon: "Cedro, Vetiver",
-            fondo: "Cuero, Musk"
+            salida: "Azafrán, Canela",
+            corazon: "Rosa, Jazmín",
+            fondo: "Vainilla, Ámbar, Sándalo"
         },
-        originalPrice: 115,
-        price5ml: 25,
-        price10ml: 45,
-        bestSeller: true,
-        available: true
-    },
-    {
-        id: 10,
-        name: "London",
-        brand: "burberry",
-        brandName: "Burberry",
-        type: "amaderado",
-        typeName: "Amaderado",
-        image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=400&h=400&fit=crop",
-        notes: {
-            salida: "Bergamota, Lavanda",
-            corazon: "Cedro, Pimienta",
-            fondo: "Musk, Sándalo"
-        },
-        originalPrice: 100,
-        price5ml: 22,
-        price10ml: 40,
+        originalPrice: 75,
+        price5ml: 9,
+        price10ml: 13,
         bestSeller: false,
         available: true
     },
@@ -204,107 +185,183 @@ const perfumes = [
             fondo: "Vetiver, Musk"
         },
         originalPrice: 105,
-        price5ml: 23,
-        price10ml: 42,
+        price5ml: 10.5,
+        price10ml: 14.5,
         bestSeller: true,
         available: true
     },
     {
         id: 12,
-        name: "Ultra Male",
-        brand: "jean-paul-gaultier",
-        brandName: "Jean Paul Gaultier",
+        name: "Stronger With You Intensely",
+        brand: "emporio-armani",
+        brandName: "Emporio Armani",
         type: "oriental",
         typeName: "Oriental",
-        image: "html/images/perfumes/jpg.jpg",
+        image: "html/images/perfumes/you.webp",
         notes: {
             salida: "Pera, Lavanda",
             corazon: "Canela, Cumin",
-            fondo: "Vainilla, Sándalo"
+            fondo: "Vainilla, Sándalo, Ámbar"
         },
         originalPrice: 110,
-        price5ml: 24,
-        price10ml: 43,
-        bestSeller: false,
-        available: true
-    },
-    // Nuevos perfumes: Azzaro y Paco Rabanne
-    {
-        id: 13,
-        name: "Wanted",
-        brand: "azzaro",
-        brandName: "Azzaro",
-        type: "citrico",
-        typeName: "Cítrico",
-        image: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=400&h=400&fit=crop",
-        notes: {
-            salida: "Limón, Jengibre",
-            corazon: "Cardamomo, Enebro",
-            fondo: "Haba Tonka, Vetiver"
-        },
-        originalPrice: 95,
-        price5ml: 21,
-        price10ml: 38,
+        price5ml: 10.5,
+        price10ml: 14.5,
         bestSeller: true,
         available: true
     },
     {
-        id: 14,
-        name: "Chrome",
-        brand: "azzaro",
-        brandName: "Azzaro",
+        id: 13,
+        name: "9am",
+        brand: "afnan",
+        brandName: "Afnan",
         type: "citrico",
         typeName: "Cítrico",
-        image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400&h=400&fit=crop",
+        image: "html/images/perfumes/dive.webp",
         notes: {
-            salida: "Bergamota, Piña",
-            corazon: "Jazmín, Cilantro",
+            salida: "Limón, Bergamota",
+            corazon: "Lavanda, Jazmín",
             fondo: "Musk, Sándalo"
         },
-        originalPrice: 75,
-        price5ml: 16,
-        price10ml: 29,
+        originalPrice: 60,
+        price5ml: 8.5,
+        price10ml: 12.5,
+        bestSeller: false,
+        available: true
+    },
+    {
+        id: 14,
+        name: "PM",
+        brand: "afnan",
+        brandName: "Afnan",
+        type: "oriental",
+        typeName: "Oriental",
+        image: "html/images/perfumes/pm.webp",
+        notes: {
+            salida: "Azafrán, Canela",
+            corazon: "Rosa, Jazmín",
+            fondo: "Vainilla, Ámbar, Sándalo"
+        },
+        originalPrice: 70,
+        price5ml: 9,
+        price10ml: 13,
         bestSeller: false,
         available: true
     },
     {
         id: 15,
-        name: "Invictus",
-        brand: "paco-rabanne",
-        brandName: "Paco Rabanne",
-        type: "acuatico",
-        typeName: "Acuático",
-        image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop",
+        name: "Amber Noir",
+        brand: "orientica",
+        brandName: "Orientica",
+        type: "oriental",
+        typeName: "Oriental",
+        image: "html/images/perfumes/amber.webp",
         notes: {
-            salida: "Pomelo, Notas marinas",
-            corazon: "Hoja de laurel, Jazmín",
-            fondo: "Ambra gris, Madera de gaiac"
+            salida: "Azafrán, Canela",
+            corazon: "Rosa, Ámbar",
+            fondo: "Vainilla, Sándalo, Musk"
         },
-        originalPrice: 110,
-        price5ml: 24,
-        price10ml: 44,
-        bestSeller: true,
+        originalPrice: 55,
+        price5ml: 7.5,
+        price10ml: 12,
+        bestSeller: false,
         available: true
     },
     {
         id: 16,
-        name: "1 Million",
-        brand: "paco-rabanne",
-        brandName: "Paco Rabanne",
+        name: "Royal Bleu",
+        brand: "orientica",
+        brandName: "Orientica",
+        type: "amaderado",
+        typeName: "Amaderado",
+        image: "html/images/perfumes/blue.webp",
+        notes: {
+            salida: "Bergamota, Lavanda",
+            corazon: "Cedro, Pimienta",
+            fondo: "Musk, Sándalo, Vetiver"
+        },
+        originalPrice: 50,
+        price5ml: 7.5,
+        price10ml: 12,
+        bestSeller: false,
+        available: true
+    },
+    {
+        id: 17,
+        name: "Hawas Black",
+        brand: "rasasi",
+        brandName: "Rasasi",
         type: "oriental",
         typeName: "Oriental",
-        image: "https://images.unsplash.com/photo-1520975916090-3105956dac38?w=400&h=400&fit=crop",
+        image: "html/images/perfumes/hawas black.webp",
         notes: {
-            salida: "Toronja, Menta",
-            corazon: "Rosa, Canela",
-            fondo: "Cuero, Ámbar"
+            salida: "Azafrán, Canela",
+            corazon: "Rosa, Jazmín",
+            fondo: "Ámbar, Sándalo, Musk"
+        },
+        originalPrice: 70,
+        price5ml: 9,
+        price10ml: 13,
+        bestSeller: false,
+        available: true
+    },
+    {
+        id: 18,
+        name: "Hawas Malibu",
+        brand: "rasasi",
+        brandName: "Rasasi",
+        type: "citrico",
+        typeName: "Cítrico",
+        image: "html/images/perfumes/malibu.webp",
+        notes: {
+            salida: "Limón, Bergamota, Pomelo",
+            corazon: "Jazmín, Lavanda",
+            fondo: "Musk, Sándalo, Vetiver"
+        },
+        originalPrice: 68,
+        price5ml: 8.5,
+        price10ml: 12.5,
+        bestSeller: false,
+        available: true
+    },
+    {
+        id: 19,
+        name: "Le Beau",
+        brand: "jean-paul-gaultier",
+        brandName: "Jean Paul Gaultier",
+        type: "citrico",
+        typeName: "Cítrico",
+        image: "html/images/perfumes/bau.webp",
+        notes: {
+            salida: "Bergamota, Coco",
+            corazon: "Jazmín, Ylang-Ylang",
+            fondo: "Vainilla, Sándalo, Almizcle"
         },
         originalPrice: 100,
-        price5ml: 22,
-        price10ml: 40,
-        bestSeller: true,
+        price5ml: 10.5,
+        price10ml: 14.5,
+        bestSeller: false,
         available: true
-    }
+    },
+    {
+        id: 20,
+        name: "Le Male Elixir",
+        brand: "jean-paul-gaultier",
+        brandName: "Jean Paul Gaultier",
+        type: "oriental",
+        typeName: "Oriental",
+        image: "html/images/perfumes/elixir.webp",
+        notes: {
+            salida: "Lavanda, Cardamomo",
+            corazon: "Canela, Vainilla",
+            fondo: "Ámbar, Sándalo, Almizcle"
+        },
+        originalPrice: 115,
+        price5ml: 11,
+        price10ml: 15,
+        bestSeller: false,
+        available: true
+    },
+    
 ];
 
 // Variables globales
@@ -320,6 +377,20 @@ let comparisonList = JSON.parse(localStorage.getItem('comparisonList') || '[]');
 // Inicialización
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
+});
+
+// Ocultar animación de entrada cuando cargue la página
+window.addEventListener('load', function() {
+    const overlay = document.getElementById('intro-overlay');
+    if (!overlay) return;
+    setTimeout(function() {
+        overlay.classList.add('intro-hide');
+        overlay.addEventListener('transitionend', function() {
+            if (overlay && overlay.parentNode) {
+                overlay.parentNode.removeChild(overlay);
+            }
+        }, { once: true });
+    }, 450);
 });
 
 function initializeApp() {
@@ -425,12 +496,13 @@ function renderPerfumes() {
         return;
     }
 
+    // Mostrar todos los perfumes filtrados
     grid.innerHTML = filteredPerfumes.map(perfume => {
         const isFavorited = favorites.includes(perfume.id);
         const isInComparison = comparisonList.includes(perfume.id);
         return `
         <div class="perfume-card">
-            <div class="perfume-image" data-perfume-id="${perfume.id}" onclick="openPerfumeModal(${perfume.id})">
+            <div class="perfume-image ${perfume.id === 19 ? 'le-beau-image' : ''}" data-perfume-id="${perfume.id}" onclick="openPerfumeModal(${perfume.id})">
                 <img class="perfume-image-main" src="${perfume.image}" alt="${perfume.name}" onerror="handleImageError(this, '${perfume.name}')">
                 ${perfume.bestSeller ? '<div class="perfume-badge">Más Vendido</div>' : ''}
             </div>
@@ -470,7 +542,7 @@ function renderBestSellers() {
         const isInComparison = comparisonList.includes(perfume.id);
         return `
         <div class="best-seller-card">
-            <div class="perfume-image" data-perfume-id="${perfume.id}" onclick="openPerfumeModal(${perfume.id})">
+            <div class="perfume-image ${perfume.id === 19 ? 'le-beau-image' : ''}" data-perfume-id="${perfume.id}" onclick="openPerfumeModal(${perfume.id})">
                 <img class="perfume-image-main" src="${perfume.image}" alt="${perfume.name}" onerror="handleImageError(this, '${perfume.name}')">
                 <div class="best-seller-badge">Más Vendido</div>
             </div>
@@ -529,7 +601,7 @@ function openPerfumeModal(perfumeId) {
     const modalBody = document.getElementById('modal-body');
 
     modalBody.innerHTML = `
-        <div class="modal-perfume-image">
+        <div class="modal-perfume-image ${perfume.id === 19 ? 'le-beau-modal' : ''}">
             <img class="perfume-image-main" src="${perfume.image}" alt="${perfume.name}" onerror="handleImageError(this, '${perfume.name}')">
             <div class="perfume-placeholder" style="display: none;">
                 <i class="fas fa-spray-can"></i>
@@ -601,7 +673,7 @@ function closeModal() {
 // Función para contactar por WhatsApp
 function contactWhatsApp(productName, price) {
     const message = `Hola! Me interesa comprar: ${productName} - $${price}. ¿Está disponible?`;
-    const whatsappUrl = `https://wa.me/15551234567?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/50767970489?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
 
